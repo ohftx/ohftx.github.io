@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Horizons Foundation - Empowering Children with Autism & CHDs</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2C5282;    /* Deep blue */
+            --secondary-color: #48BB78;  /* Green */
+            --accent-color: #ED8936;     /* Orange */
+            --text-color: #2D3748;
+            --light-bg: #F7FAFC;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        /* Layout Components */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Button Styles */
+        .button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-primary {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        .button-secondary {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light-bg);
+        }
+
+        /* Impact Section */
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        /* Programs Section */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .program-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Call to Action Section */
+        .cta {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-color);
+            color: var(--white);
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 6rem 0 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">Open Horizons Foundation</a>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#impact">Impact</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>With the right support, any child has the potential<br>to become an influential member of society</h1>
+            <p>Open Horizons Foundation is dedicated to creating inclusive opportunities for children with autism and congenital heart defects.</p>
+            <a href="#donate" class="button button-primary">Donate Now</a>
+            <a href="#volunteer" class="button button-secondary">Become a Volunteer</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Our Story</h2>
+            <p>Open Horizons Foundation is a 501(c)(3) nonprofit organization that believes in every child's right to support and opportunity—no matter their challenges. Through community partnerships, advocacy, and direct funding, we strive to expand quality care, education, and resources across Texas and beyond. We are dedicated to creating opportunities for children with autism, congenital heart defects, and other diagnoses, empowering them to become effective, contributing members of society.</p>
+        </div>
+    </section>
+
+    <section id="impact">
+        <div class="container">
+            <h2>Our Impact</h2>
+            <div class="impact-stats">
+                <div class="stat-card">
+                    <h3>Autism in America</h3>
+                    <p>1 in 36 children in the U.S. is identified with autism</p>
+                </div>
+                <div class="stat-card">
+                    <h3>CHD Impact</h3>
+                    <p>2–3 million individuals in the U.S. live with congenital heart defects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs">
+        <div class="container">
+            <h2>Programs & Services</h2>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <h3>Specialized Daycare Centers</h3>
+                    <p>Supporting inclusive daycare facilities equipped to care for children with autism and CHDs.</p>
+                </div>
+                <div class="program-card">
+                    <h3>Therapy Resources</h3>
+                    <p>Providing access to specialized therapy services including occupational, speech, and physical therapy.</p>
+                </div>
+                <div class="program-card">
+                    <h3>Community Integration</h3>
+                    <p>Creating inclusive community programs that foster understanding and acceptance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Make a Difference Today</h2>
+            <p>Your support can help create lasting change in a child's life.</p>
+            <a href="#donate" class="button button-primary">Donate Now</a>
+            <a href="#volunteer" class="button button-secondary">Become a Volunteer</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div>
+                    <h3>Get in Touch</h3>
+                    <p>Email: info@ohftx.org</p>
+                    <p>Phone: (830) 359-1082</p>
+                    <p>Address: 306 Park Drive, Merrian, TX</p>
+                </div>
+                <div>
+                    <h3>Connect With Us</h3>
+                    <p>Join our community events where families can meet and support each other. We regularly host relays, cookouts, and galas to bring families together and strengthen our community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div>
+            </div>
+            <div style="text-align: center; width: 100%;">
+                <p>&copy; 2025 Open Horizons Foundation</p>
+                <p>A 501(c)(3) nonprofit organization</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
