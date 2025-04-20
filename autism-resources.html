@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Child Has Autism: Resources & Support | The Open Horizons Foundation</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2C5282;    /* Deep blue */
+            --secondary-color: #48BB78;  /* Green */
+            --accent-color: #ED8936;     /* Orange */
+            --text-color: #2D3748;
+            --light-bg: #F7FAFC;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        /* Layout Components */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Page Specific Styles */
+        .page-header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .resource-section {
+            background-color: var(--light-bg);
+            padding: 3rem 0;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .resource-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .steps-list {
+            margin: 2rem 0;
+        }
+
+        .steps-list li {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .faq-section {
+            margin: 3rem 0;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Button Styles */
+        .button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, background-color 0.3s;
+            margin-top: 1rem;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-primary {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        .button-secondary {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--text-color);
+            color: var(--white);
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                padding: 1rem 0;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">The Open Horizons Foundation</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#impact">Impact</a></li>
+                    <li><a href="index.html#programs">Programs</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="autism-resources.html">Autism Resources</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>My Child Has Autism: What Can I Do?</h1>
+            <p>A guide for parents navigating an autism diagnosis</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Understanding the Diagnosis</h2>
+            <p>Learning that your child has autism spectrum disorder (ASD) can be overwhelming. Remember that an autism diagnosis doesn't change who your child is—it helps you understand how they experience the world and provides a pathway to support their unique needs.</p>
+            
+            <div class="steps-list">
+                <h3>First Steps After Diagnosis</h3>
+                <ol>
+                    <li>
+                        <h4>Take time to process</h4>
+                        <p>It's normal to experience a range of emotions. Give yourself permission to feel and process these emotions while remembering that your child is the same person they were before the diagnosis.</p>
+                    </li>
+                    <li>
+                        <h4>Learn about autism</h4>
+                        <p>Understanding autism will help you better support your child. There are many excellent books, websites, and support groups that can provide valuable information.</p>
+                    </li>
+                    <li>
+                        <h4>Build a support team</h4>
+                        <p>This may include healthcare providers, therapists, educators, family members, and other parents of children with autism.</p>
+                    </li>
+                    <li>
+                        <h4>Explore intervention options</h4>
+                        <p>Early intervention can make a significant difference. Work with professionals to develop a plan tailored to your child's specific needs.</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section class="resource-section">
+        <div class="container">
+            <h2>Therapy and Intervention Options</h2>
+            <p>There are many evidence-based interventions that can help children with autism develop skills and navigate challenges.</p>
+            
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <h3>Applied Behavior Analysis (ABA)</h3>
+                    <p>A therapy that focuses on improving specific behaviors, such as communication, social skills, learning, and adaptive living skills.</p>
+                </div>
+                <div class="resource-card">
+                    <h3>Speech-Language Therapy</h3>
+                    <p>Helps improve communication skills, both verbal and non-verbal, and address social communication challenges.</p>
+                </div>
+                <div class="resource-card">
+                    <h3>Occupational Therapy</h3>
+                    <p>Focuses on helping children develop skills needed for daily living and learning, including fine motor skills and sensory processing.</p>
+                </div>
+                <div class="resource-card">
+                    <h3>Social Skills Training</h3>
+                    <p>Teaches children how to interact with others and develop meaningful relationships.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Supporting Your Child at Home</h2>
+            <p>Creating a supportive home environment is essential for your child's development and well-being.</p>
+            
+            <div class="steps-list">
+                <h3>Strategies for Daily Life</h3>
+                <ul>
+                    <li>
+                        <h4>Establish routines</h4>
+                        <p>Consistent routines can help children with autism feel secure and understand what to expect.</p>
+                    </li>
+                    <li>
+                        <h4>Create a sensory-friendly environment</h4>
+                        <p>Minimize sensory triggers that may cause distress and provide sensory tools that help your child self-regulate.</p>
+                    </li>
+                    <li>
+                        <h4>Use visual supports</h4>
+                        <p>Visual schedules, social stories, and visual cues can help your child understand expectations and transitions.</p>
+                    </li>
+                    <li>
+                        <h4>Focus on strengths</h4>
+                        <p>Identify and nurture your child's interests and strengths. These can be pathways to learning and connection.</p>
+                    </li>
+                    <li>
+                        <h4>Practice self-care</h4>
+                        <p>Taking care of yourself is essential. Make time for activities that recharge you and seek support when needed.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="resource-section">
+        <div class="container">
+            <h2>Educational Support</h2>
+            <p>All children with autism have the right to an appropriate education that meets their unique needs.</p>
+            
+            <div class="steps-list">
+                <h3>Educational Rights and Options</h3>
+                <ul>
+                    <li>
+                        <h4>Individualized Education Program (IEP)</h4>
+                        <p>Children with autism qualify for special education services. An IEP outlines the specific supports and accommodations your child needs to succeed in school.</p>
+                    </li>
+                    <li>
+                        <h4>504 Plan</h4>
+                        <p>This plan ensures that a child with a disability receives accommodations that ensure their academic success and access to the learning environment.</p>
+                    </li>
+                    <li>
+                        <h4>School placement options</h4>
+                        <p>These may include general education classrooms with support, special education classrooms, specialized schools, or homeschooling. The best option depends on your child's specific needs.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">Will my child ever be able to live independently?</div>
+                    <div class="faq-answer">
+                        <p>Many individuals with autism lead independent or semi-independent lives as adults. The level of independence varies widely and depends on many factors, including the individual's specific strengths and challenges. Early intervention and ongoing support can help maximize your child's potential for independence.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How do I explain autism to my child?</div>
+                    <div class="faq-answer">
+                        <p>When explaining autism to your child, use clear, positive, and age-appropriate language. Focus on differences rather than deficits, and emphasize that everyone has unique strengths and challenges. There are many excellent books and resources designed to help children understand autism.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How do I handle meltdowns and challenging behaviors?</div>
+                    <div class="faq-answer">
+                        <p>Understanding the triggers for meltdowns and challenging behaviors is key. These behaviors often occur when a child is overwhelmed, anxious, or unable to communicate their needs. Work with professionals to develop strategies for prevention and intervention. Remember that behavior is a form of communication.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How can I help my child make friends?</div>
+                    <div class="faq-answer">
+                        <p>Social skills can be explicitly taught. Consider social skills groups, structured playdates, and activities based on your child's interests. Some children with autism may prefer fewer, deeper friendships rather than many casual ones. Respect your child's social preferences while providing opportunities for meaningful connection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="resource-section">
+        <div class="container">
+            <h2>Step-by-Step Guide to Maximizing Government Support in Austin, TX</h2>
+            <p>Navigating government support systems can be overwhelming. This guide will help you access the resources available for your child with autism in Austin, Texas.</p>
+            
+            <div class="steps-list">
+                <h3>🔹 Step 1: Apply for Medicaid (if not already enrolled)</h3>
+                <p>Texas Medicaid can unlock a wide range of services, including ABA therapy, OT, PT, speech therapy, and in-home supports.</p>
+                <h4>✅ How:</h4>
+                <ul>
+                    <li>Go to <a href="https://www.yourtexasbenefits.com" target="_blank">YourTexasBenefits.com</a></li>
+                    <li>Apply for Medicaid (use your child's disability diagnosis to support eligibility, even if your income is too high — ask about "Medicaid Buy-In" or "MDCP Waiver")</li>
+                    <li>Call 2-1-1 for help with the application process</li>
+                </ul>
+            </div>
+            
+            <div class="steps-list">
+                <h3>🔹 Step 2: Apply for the Texas Children's Autism Program</h3>
+                <p>This program provides 180+ hours of ABA therapy yearly — paid for by the state.</p>
+                <h4>✅ How:</h4>
+                <ul>
+                    <li>Call 2-1-1 and ask for providers in the "Children's Autism Program"</li>
+                    <li>Or go to: <a href="https://www.hhs.texas.gov/services/disability/autism" target="_blank">Texas HHSC Autism Page</a></li>
+                    <li>Providers will guide you through paperwork and eligibility</li>
+                </ul>
+            </div>
+            
+            <div class="steps-list">
+                <h3>🔹 Step 3: Request an IEP (Individualized Education Plan) through Austin ISD</h3>
+                <p>This is free support from your local school, including special education teachers, therapists, and behavioral aides.</p>
+                <h4>✅ How:</h4>
+                <ul>
+                    <li>Email or call your child's school principal or counselor</li>
+                    <li>Say: "I am formally requesting a full special education evaluation for my child under IDEA."</li>
+                    <li>AISD must respond within 15 school days</li>
+                </ul>
+                <p>If eligible, your child will get an IEP that includes:</p>
+                <ul>
+                    <li>Speech, OT, social skills training, classroom accommodations, 1-on-1 support</li>
+                </ul>
+            </div>
+            
+            <div class="steps-list">
+                <h3>🔹 Step 4: Apply for Medicaid Waivers (Extra Long-Term Support)</h3>
+                <p>Waivers can cover respite care, home modifications, and in-home support.</p>
+                <h4>✅ Waivers to Apply For:</h4>
+                <ul>
+                    <li>MDCP (Medically Dependent Children Program)</li>
+                    <li>CLASS Waiver</li>
+                    <li>HCS Waiver (Home and Community-Based Services)</li>
+                </ul>
+                <h4>✅ How:</h4>
+                <ul>
+                    <li>Get on the interest list ASAP (the wait can be years, but you can move up fast in emergencies)</li>
+                    <li>Call 1-877-438-5658 (ask to be placed on every waiver interest list)</li>
+                    <li>Keep your confirmation numbers!</li>
+                </ul>
+            </div>
+            
+            <div class="steps-list">
+                <h3>🔹 Step 5: Apply for SSI (Supplemental Security Income)</h3>
+                <p>SSI is a federal monthly cash benefit — over $900/month — for disabled children in low-income households.</p>
+                <h4>✅ How:</h4>
+                <ul>
+                    <li>Apply through Social Security</li>
+                    <li>Call your local SSA office for help: 1-800-772-1213</li>
+                </ul>
+            </div>
+            
+            <div class="steps-list">
+                <h3>🔹 Step 6: Use Local Nonprofits for Free Parent Help</h3>
+                <p>These nonprofits will help you file paperwork, advocate, and unlock services for free.</p>
+                <h4>✅ Use These in Austin:</h4>
+                <ul>
+                    <li><a href="https://velaustin.org" target="_blank">VELA</a></li>
+                    <li><a href="https://www.easterseals.com/centraltexas" target="_blank">Easter Seals Central Texas</a></li>
+                    <li><a href="https://www.txp2p.org" target="_blank">Texas Parent to Parent</a></li>
+                    <li><a href="https://www.navigatelifetexas.org" target="_blank">Navigate Life Texas</a></li>
+                </ul>
+            </div>
+            
+            <div class="steps-list">
+                <h3>🔹 Step 7: Track Everything (Documentation is Key)</h3>
+                <p>Keep a folder or digital file for:</p>
+                <ul>
+                    <li>Medicaid approval letters</li>
+                    <li>IEP paperwork</li>
+                    <li>Therapy reports</li>
+                    <li>Waiver interest list confirmations</li>
+                    <li>Medical/diagnostic reports</li>
+                </ul>
+            </div>
+            
+            <div class="resource-card" style="margin-top: 2rem;">
+                <h3>🧭 Summary: The Max Benefits Strategy</h3>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <th style="text-align: left; padding: 0.5rem;">Resource</th>
+                        <th style="text-align: left; padding: 0.5rem;">Benefit</th>
+                        <th style="text-align: left; padding: 0.5rem;">How to Access</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 0.5rem;">Medicaid</td>
+                        <td style="padding: 0.5rem;">Health coverage + ABA/therapy</td>
+                        <td style="padding: 0.5rem;">YourTexasBenefits.com</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 0.5rem;">Children's Autism Program</td>
+                        <td style="padding: 0.5rem;">180+ hours ABA/year</td>
+                        <td style="padding: 0.5rem;">Call 2-1-1</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 0.5rem;">IEP through AISD</td>
+                        <td style="padding: 0.5rem;">School-based therapy & supports</td>
+                        <td style="padding: 0.5rem;">Request evaluation at school</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 0.5rem;">Waivers</td>
+                        <td style="padding: 0.5rem;">In-home care, respite, life support</td>
+                        <td style="padding: 0.5rem;">1-877-438-5658</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #e2e8f0;">
+                        <td style="padding: 0.5rem;">SSI</td>
+                        <td style="padding: 0.5rem;">Monthly income for your child</td>
+                        <td style="padding: 0.5rem;">SSA.gov</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;">Local Nonprofits</td>
+                        <td style="padding: 0.5rem;">Free advocacy & help</td>
+                        <td style="padding: 0.5rem;">VELA, Easter Seals, TxP2P</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Connect with The Open Horizons Foundation</h2>
+            <p>We're here to support you and your child on this journey. Our foundation offers various programs and resources specifically designed for families navigating autism.</p>
+            
+            <a href="index.html#contact" class="button button-primary">Contact Us</a>
+            <a href="index.html#programs" class="button button-secondary">Explore Our Programs</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div style="text-align: center; width: 100%;">
+                <p>&copy; 2025 The Open Horizons Foundation</p>
+                <p>A 501(c)(3) nonprofit organization</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
