@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect | The Open Horizons Foundation</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2C5282;    /* Deep blue */
+            --secondary-color: #48BB78;  /* Green */
+            --accent-color: #ED8936;     /* Orange */
+            --text-color: #2D3748;
+            --light-bg: #F7FAFC;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        /* Layout Components */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Page Specific Styles */
+        .page-header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .connect-section {
+            background-color: var(--light-bg);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .connect-card {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .email-address {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+
+        .stories-section {
+            padding: 4rem 0;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .story-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .story-card h3 {
+            color: var(--primary-color);
+        }
+
+        blockquote {
+            font-style: italic;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 1rem;
+            margin: 1rem 0;
+        }
+
+        /* Button Styles */
+        .button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, background-color 0.3s;
+            margin-top: 1rem;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-primary {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        .button-secondary {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .button-large {
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--text-color);
+            color: var(--white);
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                padding: 1rem 0;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .email-address {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo" style="display: flex; align-items: center;"><img src="media/logo.jpg" alt="The Open Horizons Foundation Logo" style="max-height: 60px; margin-right: 15px;"><span>The Open Horizons Foundation</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#impact">Impact</a></li>
+                    <li><a href="index.html#programs">Programs</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="autism-resources.html">Autism Resources</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="connect.html">Connect</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Connect With Us</h1>
+            <p>Let us help you find the support and resources you need</p>
+        </div>
+    </section>
+
+    <section class="connect-section">
+        <div class="container">
+            <h2>How We Can Help</h2>
+            <p>At The Open Horizons Foundation, we believe in the power of connection. Whether you're a parent seeking resources, a professional looking to collaborate, or someone wanting to support our mission, we're here to help.</p>
+            
+            <div class="connect-card">
+                <h3>Reach Out to Us</h3>
+                <p>Email us with your situation, and we'll try to connect you with the resources, support, or people that can help.</p>
+                <div class="email-address">info@specialhelpers.org</div>
+                <p>Please include details about your specific needs or situation so we can provide the most relevant assistance.</p>
+                
+                <a href="mailto:info@specialhelpers.org" class="button button-primary button-large">Email Us Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="stories-section">
+        <div class="container">
+            <h2>Connection Stories</h2>
+            <p>Here are some examples of how we've helped connect families and individuals:</p>
+            
+            <div class="stories-grid">
+                <div class="story-card">
+                    <h3>Finding Support</h3>
+                    <blockquote>"When my son was diagnosed with autism, I felt overwhelmed and alone. The Open Horizons Foundation connected me with other parents in my area who had been through the same experience. The support network they helped me build has been invaluable."</blockquote>
+                    <p>- Parent from Austin, TX</p>
+                </div>
+                <div class="story-card">
+                    <h3>Accessing Resources</h3>
+                    <blockquote>"I was struggling to navigate the system to get the therapy services my daughter needed. The foundation helped me understand the available options and connected me with providers who had openings. They saved me months of waiting and searching."</blockquote>
+                    <p>- Parent from San Antonio, TX</p>
+                </div>
+                <div class="story-card">
+                    <h3>Building Community</h3>
+                    <blockquote>"Through the connections made by The Open Horizons Foundation, we formed a local support group that meets monthly. Having others who understand our journey has made all the difference for our family."</blockquote>
+                    <p>- Parent from Houston, TX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div style="text-align: center; width: 100%;">
+                <p>&copy; 2025 The Open Horizons Foundation</p>
+                <p>A 501(c)(3) nonprofit organization</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
