@@ -1,0 +1,2155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investors | The Open Horizons Foundation</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2C5282;    /* Deep blue */
+            --secondary-color: #48BB78;  /* Green */
+            --accent-color: #ED8936;     /* Orange */
+            --text-color: #2D3748;
+            --light-bg: #F7FAFC;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        /* Layout Components */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 100%;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Page Specific Styles */
+        .page-header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .login-section {
+            background-color: var(--light-bg);
+            padding: 3rem 0;
+            text-align: center;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-form {
+            max-width: 400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 5px;
+        }
+
+        .content-section {
+            display: none; /* Hidden by default until password is entered */
+            padding: 2rem 0;
+        }
+
+        /* Tab Styles */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .tab-button {
+            padding: 1rem 2rem;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .tab-button:hover {
+            background-color: #f0f4f8;
+        }
+
+        .tab-button.active {
+            border-bottom: 3px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Button Styles */
+        .button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, background-color 0.3s;
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-primary {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        .button-secondary {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--text-color);
+            color: var(--white);
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                padding: 1rem 0;
+            }
+
+            .logo {
+                margin-bottom: 0.5rem;
+            }
+            
+            .logo img {
+                max-height: 40px;
+            }
+            
+            .logo span {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                margin-top: 0.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            
+            nav a {
+                font-size: 0.9rem;
+                padding: 0.3rem 0.5rem;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .tab-button {
+                width: 100%;
+                text-align: left;
+                padding: 0.8rem 1rem;
+                border-bottom: 1px solid #e2e8f0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo" style="display: flex; align-items: center;"><img src="media/logo.jpg" alt="The Open Horizons Foundation Logo" style="max-height: 60px; margin-right: 15px;"><span>The Open Horizons Foundation</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#impact">Impact</a></li>
+                    <li><a href="index.html#programs">Programs</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="autism-resources.html">Autism Resources</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="connect.html">Connect</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Investor Portal</h1>
+            <p>Access to investment information and documents</p>
+        </div>
+    </section>
+
+    <section id="login-section" class="login-section">
+        <div class="container">
+            <h2>Investor Login</h2>
+            <p>Please enter the password to access investor materials.</p>
+            
+            <div class="login-form">
+                <input type="password" id="password-input" placeholder="Enter password">
+                <button id="login-button" class="button button-primary">Access Documents</button>
+                <p id="error-message" style="color: red; margin-top: 1rem; display: none;">Incorrect password. Please try again.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="content-section" class="content-section">
+        <div class="container">
+            <h2>Investor Materials</h2>
+            <p>Welcome to our investor portal. Please select a tab to view the corresponding information.</p>
+            
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab(event, 'business-plan')">Business Plan</button>
+                <button class="tab-button" onclick="openTab(event, 'proforma')">Proforma</button>
+                <button class="tab-button" onclick="openTab(event, 'documents')">Documents</button>
+                <button class="tab-button" onclick="openTab(event, 'scaling-map')">Scaling Map</button>
+                <button class="tab-button" onclick="openTab(event, 'information')">Information</button>
+            </div>
+            
+            <div id="business-plan" class="tab-content active">
+                <h3>Business Plan: Foundation-Funded Autism Service Centers in Texas</h3>
+                
+                <h4 style="margin-top: 2rem;">Executive Summary:</h4>
+                <p>This business plan outlines the creation of a nonprofit foundation that funds and supports the rapid development of autism therapy and education centers across Texas. These centers will provide government-funded services to children and young adults with Autism Spectrum Disorder (ASD), helping to eliminate long waitlists and expand access to life-changing therapy and education. The foundation will serve as the capital and compliance backbone, helping local communities and franchisees launch sustainable, Medicaid-funded centers that require no out-of-pocket expense for families.</p>
+                
+                <h4 style="margin-top: 2rem;">Mission Statement:</h4>
+                <p>To close the access gap for children and young adults with Autism in Texas by accelerating the launch of high-quality, fully government-funded autism service centers, through a foundation-driven model that partners with local operators, educators, and therapists.</p>
+                
+                <h4 style="margin-top: 2rem;">Objectives:</h4>
+                <ul>
+                    <li>Reduce the waiting list for autism services in Texas by building at least 25 centers in underserved areas within the next 3 years.</li>
+                    <li>Enable each center to serve 8 to 80 clients daily, generating sustainable revenue via Medicaid and public school contracts.</li>
+                    <li>Standardize clinical and operational procedures to ensure compliance, quality, and outcomes.</li>
+                    <li>Recruit and support operators from local communities through a turnkey franchise model backed by the foundation.</li>
+                </ul>
+                
+                <h4 style="margin-top: 2rem;">Foundation Structure & Role:</h4>
+                <p><strong>Legal Structure:</strong> 501(c)(3) nonprofit foundation</p>
+                <p><strong>Funding Sources:</strong> Philanthropic donations, grants, impact investments, and public-private partnerships</p>
+                
+                <p><strong>Core Functions:</strong></p>
+                <ul>
+                    <li>Provide startup capital (grants or zero-interest loans) to franchisees or center operators</li>
+                    <li>Handle Medicaid enrollment, licensing, and compliance support</li>
+                    <li>Train operators and clinical staff (intern pipelines, paid fellowships)</li>
+                    <li>Centralize billing and back-office operations</li>
+                    <li>Monitor outcomes and publish statewide impact data to attract continued donor and state support</li>
+                </ul>
+                
+                <h4 style="margin-top: 2rem;">Services Offered by Centers:</h4>
+                <ul>
+                    <li>Applied Behavior Analysis (ABA) therapy</li>
+                    <li>Speech and Occupational Therapy</li>
+                    <li>Educational Support & Special Education Programming</li>
+                    <li>Parent Training & Counseling</li>
+                    <li>Social Skills Groups & Life Skills Training</li>
+                    <li>After-school and Summer Programs</li>
+                </ul>
+                
+                <p>Each center will hire licensed professionals and interns, with at least one BCBA, SLP, and OT on staff or available as contractors. Centers will operate as medically necessary therapy clinics and/or educational placements for students with Individualized Education Plans (IEPs).</p>
+                
+                <h4 style="margin-top: 2rem;">Target Market:</h4>
+                <ul>
+                    <li>Children and young adults (ages 2–21) diagnosed with Autism</li>
+                    <li>Families eligible for Medicaid, CHIP, or the Children's Autism Program</li>
+                    <li>School districts in need of nonpublic placements for high-needs students</li>
+                    <li>Communities with >6-month waitlists for autism services (priority areas)</li>
+                </ul>
+                
+                <h4 style="margin-top: 2rem;">Revenue Model:</h4>
+                <ul>
+                    <li>Medicaid reimbursements (EPSDT, ABA, Speech, OT)</li>
+                    <li>Managed Care Organization (MCO) contracts</li>
+                    <li>IDEA Part B funding from public school partnerships</li>
+                    <li>Grants and government contracts (CAP, Waivers)</li>
+                    <li>Optional private pay for supplemental services (only where needed)</li>
+                </ul>
+                
+                <h4 style="margin-top: 2rem;">Franchise/Network Model:</h4>
+                <ul>
+                    <li>Foundation owns brand and systems, licenses them to mission-aligned operators</li>
+                    <li>Turnkey package includes: startup capital, staff training, clinical protocols, billing support, and compliance monitoring</li>
+                    <li>Operators pay a percentage of revenue to the foundation to sustain the ecosystem</li>
+                    <li>The foundation audits and provides quality control across all sites</li>
+                </ul>
+                
+                <h4 style="margin-top: 2rem;">Partnership Opportunities:</h4>
+                <ul>
+                    <li>Universities (for therapist training pipelines and interns)</li>
+                    <li>Local ISDs and Special Education Directors</li>
+                    <li>Texas HHSC and Medicaid MCOs</li>
+                    <li>Philanthropies focused on education and disability support</li>
+                </ul>
+                
+                <h4 style="margin-top: 2rem;">Initial Rollout Plan:</h4>
+                <ul>
+                    <li>Year 1: Design and break ground on a foundation model center that offers qualities to reduce operating expenditures</li>
+                    <li>Year 3: Launch additional pilot centers in waitlist hotspots (e.g., Austin suburbs, Rio Grande Valley, Dallas outskirts)</li>
+                    <li>Year 5: Expand to 10 additional centers using proven templates</li>
+                </ul>
+                
+                <h4 style="margin-top: 2rem;">Impact Measurement:</h4>
+                <ul>
+                    <li>Number of children served off waitlists</li>
+                    <li>Reduction in average wait time</li>
+                    <li>Client developmental progress (per standardized tools)</li>
+                    <li>Parent satisfaction and outcomes</li>
+                    <li>Cost savings to Medicaid and ISDs vs. out-of-state placements</li>
+                </ul>
+                
+                <h4 style="margin-top: 2rem;">Conclusion:</h4>
+                <p>This foundation-driven model can rapidly address the autism service crisis in Texas. By combining philanthropic startup capital with sustainable government revenue streams, we will empower local leaders to open centers, provide essential care, and ensure that no child waits over a year for life-changing support. The foundation's job is to make opening a high-quality center simple, affordable, and impactful.</p>
+                
+                <p style="margin-top: 2rem;"><em>Prepared by: Robert Douglas<br>Date: Sat April 19th 2025</em></p>
+            </div>
+            
+            <div id="proforma" class="tab-content">
+                <h3>Proforma Financial Statements</h3>
+                <p>Our proforma financial statements provide detailed projections of our expected financial performance over the next five years.</p>
+                
+                <h4 style="margin-top: 2rem;">Single Center Financial Model</h4>
+                <p>Below is a summary of the financial model for a single autism service center:</p>
+                
+                <div style="overflow-x: auto; margin: 2rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Category</th>
+                                <th style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">Amount (USD)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Land Purchase</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">-250,000.00</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Construction</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">-850,000.00</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Equipment & Furnishings</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">-100,000.00</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Training</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">-25,000.00</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Working Capital</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">-75,000.00</td>
+                            </tr>
+                            <tr style="background-color: #f0f4f8; font-weight: bold;">
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Total Initial Investment</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">-1,300,000.00</td>
+                            </tr>
+                            <tr style="background-color: #e6ffee;">
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annual Revenue</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">2,250,000.00</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Salaries & Benefits</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">-750,000.00</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Training & Compliance</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">-75,000.00</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Billing & Admin</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">-40,000.00</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Operating Costs</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">-25,000.00</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Foundation Fee (5%)</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">-112,500.00</td>
+                            </tr>
+                            <tr style="background-color: #ffeeee;">
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annual Expenses</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">-952,500.00</td>
+                            </tr>
+                            <tr style="background-color: #f0f4f8; font-weight: bold;">
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annual Net Income</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">1,297,500.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p>This financial model demonstrates the sustainability of each center, with a projected annual net income of $1,297,500 on an initial investment of $1,300,000, representing a nearly 100% annual return on investment.</p>
+                
+                <h4 style="margin-top: 2rem;">Income Statement Projections</h4>
+                <p>Below are the projected income statements for the first three years of operation:</p>
+                
+                <div style="overflow-x: auto; margin: 2rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Year</th>
+                                <th style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">Revenue</th>
+                                <th style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">Total Expenses</th>
+                                <th style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">Net Income</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Year 1</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">2,250,000.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">952,500.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">1,297,500.00</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Year 2</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">2,362,500.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">983,325.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">1,379,175.00</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Year 3</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">2,480,625.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">1,015,187.25</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">1,465,437.75</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p>As shown in the projections, revenue is expected to grow by 5% annually, with a corresponding increase in expenses. Net income shows steady growth over the three-year period, demonstrating the long-term sustainability of the center model.</p>
+                
+                <h4 style="margin-top: 2rem;">Balance Sheet Projections</h4>
+                <p>The table below shows the projected balance sheet for the first three years of operation:</p>
+                
+                <div style="overflow-x: auto; margin: 2rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Year</th>
+                                <th style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">Cash</th>
+                                <th style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">Land</th>
+                                <th style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">Net Building</th>
+                                <th style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">Net Equipment</th>
+                                <th style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">Retained Earnings</th>
+                                <th style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">Total Assets</th>
+                                <th style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">Total Liabilities</th>
+                                <th style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">Total Equity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Year 1</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">75,000.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">250,000.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">765,000.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">80,000.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">1,297,500.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">2,467,500.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">-</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">2,467,500.00</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Year 2</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">75,000.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">250,000.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">680,000.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">60,000.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">2,676,675.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">3,741,675.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">-</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">3,741,675.00</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Year 3</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">75,000.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">250,000.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">595,000.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">40,000.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">4,142,112.75</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">5,102,112.75</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">-</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">5,102,112.75</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p>The balance sheet projections demonstrate strong asset growth over the three-year period, with total assets increasing from $2,467,500 in Year 1 to $5,102,112.75 in Year 3. This growth is primarily driven by retained earnings, while the building and equipment values decrease due to depreciation. The center operates with zero liabilities, resulting in a strong equity position that doubles over the three-year period.</p>
+                
+                <h4 style="margin-top: 2rem;">Cash Flow Projections</h4>
+                <p>The table below shows the projected cash flow for the first three years of operation:</p>
+                
+                <div style="overflow-x: auto; margin: 2rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Year</th>
+                                <th style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">Cash Inflow</th>
+                                <th style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">Cash Outflow</th>
+                                <th style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">Net Cash Flow</th>
+                                <th style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">Cumulative Cash</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Year 1</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">1,402,500.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">-</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">1,402,500.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">102,500.00</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Year 2</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">1,484,175.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">-</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">1,484,175.00</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">1,586,675.00</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Year 3</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">1,570,437.75</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">-</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">1,570,437.75</td>
+                                <td style="padding: 10px; text-align: right; border: 1px solid #e2e8f0;">3,157,112.75</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p>The cash flow projections show strong positive cash flow from operations in each year. With no cash outflows shown (as operational expenses are covered by revenue), the cumulative cash position grows substantially over the three-year period, reaching over $3.15 million by Year 3. This demonstrates the center's ability to generate significant liquidity beyond its initial investment requirements.</p>
+                
+                <h4 style="margin-top: 2rem;">Break-even Analysis</h4>
+                <p>To ensure financial sustainability, each center has a clear break-even point calculated based on its fixed and variable costs.</p>
+                
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 2rem 0;">
+                    <p><strong>Fixed Costs:</strong> Estimated at $840,000 annually, including salaries, training, administrative overhead, and operating expenses.</p>
+                    
+                    <p><strong>Revenue per Client:</strong> $15,000 annually (primarily funded through Medicaid and public contracts).</p>
+                    
+                    <p><strong>Variable Costs:</strong> Include a 5% foundation fee on gross revenue.</p>
+                    
+                    <p style="margin-top: 15px;">Using these figures, each center reaches break-even at approximately <strong>59 clients per year</strong> or <strong>$884,211 in annual revenue</strong>. Beyond this point, all additional revenue contributes to net income and supports reinvestment, expansion, or enhanced service offerings.</p>
+                </div>
+                
+                <p>This break-even analysis demonstrates that each center can achieve financial sustainability with a relatively modest client base, making the model viable even in smaller communities or during initial ramp-up periods.</p>
+                
+                <h4 style="margin-top: 2rem;">Funding Requirements</h4>
+                <p>To launch the first five centers in Year 1, the foundation seeks a total of $6.5 million in startup capital. This funding will be allocated as follows:</p>
+                
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 2rem 0;">
+                    <p><strong>$1.3 million per center, covering:</strong></p>
+                    <ul style="margin-top: 10px;">
+                        <li>Land acquisition and development</li>
+                        <li>Facility construction and outfitting</li>
+                        <li>Equipment and furnishings</li>
+                        <li>Staff recruitment and training</li>
+                        <li>Licensing, compliance, and Medicaid enrollment</li>
+                        <li>Working capital for first 6–12 months of operations</li>
+                    </ul>
+                    
+                    <p style="margin-top: 15px;">Funding will come from a blend of philanthropic contributions, foundation grants, and social impact investments. In future years, centers are expected to be self-sustaining from operational revenue, allowing the foundation to recycle initial funds into additional launches.</p>
+                    
+                    <p style="margin-top: 15px;"><strong>Additional administrative funds may be requested for:</strong></p>
+                    <ul style="margin-top: 10px;">
+                        <li>Centralized billing and compliance systems</li>
+                        <li>Curriculum and training development</li>
+                        <li>Impact measurement and outcomes tracking</li>
+                    </ul>
+                </div>
+                
+                <p>This funding structure allows for a sustainable expansion model where initial investments create self-funding centers that generate both social impact and financial sustainability, creating a virtuous cycle of growth and service expansion.</p>
+            </div>
+            
+            <div id="documents" class="tab-content">
+                <h3>Documents</h3>
+
+                <ul>
+                    <li><strong>Articles of Incorporation</strong> - <a href="https://docs.google.com/document/d/1CgaM_8PMigygwubQh6cmRmYiZLAMJqYFHYCJNVqTd-I/edit?usp=sharing" target="_blank">View Online</a></li>
+                    <li><strong>Bylaws</strong> - <a href="https://docs.google.com/document/d/1njGPq0Nb4qdrxtO4MW11DcBcC-qYr65vMn0le4U0n50/edit?usp=sharing" target="_blank">View Online</a></li>
+                    <li>501(c)(3) Determination Letter</li>
+                    <li><strong>Board Meeting Minutes</strong> - <a href="https://docs.google.com/document/d/1vOVkJD-M_MmojUPBy-1pzo_oN2ke57u7f2qwW-4q_6s/edit?usp=sharing" target="_blank">View Online</a></li>
+                    <li><strong>Annual Reports</strong> - <a href="https://docs.google.com/document/d/1JKSGjFoNmqTqGN13Hr0Y5tM427UwFSzTZLl_hlpWmYU/edit?usp=sharing" target="_blank">View Online</a></li>
+                    <li><strong>Grant Applications</strong> - <a href="https://docs.google.com/document/d/11b02NcfETn41cPUQPnt4fqlSvCSFXOdPZ3JHgSsPwEI/edit?usp=sharing" target="_blank">View Online</a></li>
+                </ul>
+
+            </div>
+            
+            <div id="scaling-map" class="tab-content">
+                <h3>Scaling Map</h3>
+                <p>Our scaling map outlines our growth strategy and expansion plans for the next decade.</p>
+                
+                <h4 style="margin-top: 2rem;">Geographic Expansion Timeline</h4>
+                
+                <div style="overflow-x: auto; margin: 2rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Year</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Region</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Target City</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Milestone</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Projected Clients Served</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2025</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Central Texas</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Seguin (Flagship Site)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Launch of first autism center. Complete Medicaid enrollment, hire full staff, and open doors.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">150</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2026</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Greater Austin</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">North Austin / Round Rock</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Open 2nd center in a high-growth suburban area. Partner with school districts for IEP placements.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">+150</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2027</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">San Antonio Area</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">New Braunfels / Seguin</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Expand into south-central region. Build bilingual capacity for Spanish-speaking families.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">+150</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2028</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">North Texas</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Dallas-Fort Worth</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Launch 2 urban centers simultaneously with rotating clinical internships.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">+300</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2029</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Gulf Coast</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Houston Metro (Pasadena or Pearland)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Collaborate with hospital systems and local education co-ops.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">+150</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2030</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Rural Expansion</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Lubbock or East Texas hub</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Pilot hybrid teletherapy + in-person site for rural communities.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">+150</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p>By 2030, our network is projected to serve over 1,050 clients annually across Texas, with centers strategically located to maximize accessibility while maintaining operational efficiency.</p>
+                
+                <h4 style="margin-top: 2rem;">📌 Cumulative Impact by 2030</h4>
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li><strong>Centers Launched:</strong> 6–7</li>
+                        <li><strong>Annual Capacity:</strong> ~1,050 clients served/year</li>
+                        <li><strong>Full-Time Jobs Created:</strong> 100+</li>
+                        <li><strong>Internships Supported:</strong> 40+ future therapists, teachers, and behavior techs trained</li>
+                    </ul>
+                </div>
+                
+                <h4 style="margin-top: 2rem;">🧱 Expansion Priorities</h4>
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li><strong>Medicaid participation and credentialing</strong></li>
+                        <li><strong>Local hiring + university partnerships</strong></li>
+                        <li><strong>Government funding readiness</strong> (waivers, school district billing)</li>
+                        <li><strong>Site ownership</strong> to protect long-term mission</li>
+                        <li><strong>Equity:</strong> prioritizing both high-need urban and underserved rural communities</li>
+                    </ul>
+                </div>
+                
+                <h4 style="margin-top: 2rem;">Service Offering Growth</h4>
+                
+                <div style="overflow-x: auto; margin: 2rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Year</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Service Category</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Description</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Billing Source</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2025</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">ABA Therapy (1:1)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Core service at launch. Supervised by Licensed Behavior Analysts (LBAs), delivered by RBTs.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Medicaid EPSDT, CAP Grant</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Kingsbury center pilot</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;"></td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Parent Training & Coaching</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Integrated with ABA; mandatory for Medicaid and CAP funding.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Medicaid, CAP Grant</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Delivered in clinic and at home</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;"></td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Intake & Diagnostic Evaluations</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Assess autism eligibility and functional needs.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Private pay, Medicaid (limited)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Partner with psychologist or pediatricians</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2026</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Speech Therapy (SLP)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Add licensed speech-language pathologists (SLPs) to each site.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Medicaid, IDEA (school placements)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Evaluate and treat communication disorders</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;"></td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">OT / Sensory Integration</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Hire occupational therapists (OTRs/COTAs) for fine motor and sensory needs.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Medicaid, IDEA</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Add sensory rooms</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;"></td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">School Readiness / Academic Support</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Add certified special ed teachers for clients with IEPs.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">IDEA (district-funded), Medicaid waiver</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Provide part-day instruction</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2027</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Social Skills Groups</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Run age-based group sessions led by therapists.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Medicaid (if allowed), out-of-pocket, school contracts</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Builds peer communication</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;"></td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Summer Programs (ESY)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Extended School Year for IEP students.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">IDEA / school district funds</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Site-based + field trips</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2028</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Counseling (LPC, LCSW)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Add licensed counselors for anxiety, transitions, family dynamics.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Medicaid, private pay</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">For clients with dual diagnosis</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;"></td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Bilingual Services</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Hire bilingual clinicians; expand access in Spanish</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">All funders</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Especially in San Antonio, Houston</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2029</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">In-Home ABA & Parent Support</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Launch outreach teams for home-based care</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Medicaid</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Especially for rural and medically fragile clients</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2030</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Telehealth + Rural Access</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Hybrid service delivery (virtual parent training, consults)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Medicaid, Waivers</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Pilot in East TX or Panhandle</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h4 style="margin-top: 2rem;">🧭 Service Growth Principles</h4>
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li>Grow only as licensed, credentialed staff become available</li>
+                        <li>Prioritize services that meet unmet needs and are billable to Medicaid or IDEA</li>
+                        <li>Layer services over time to improve outcomes and retain clients long-term</li>
+                        <li>Expand inclusive education and family wraparound offerings to increase whole-child impact</li>
+                    </ul>
+                </div>
+                
+                <h4 style="margin-top: 2rem;">Capacity Building Strategy (2025–2030)</h4>
+                
+                <p style="margin-top: 1rem;"><strong>🏁 Goal:</strong><br>
+                To grow internal systems, leadership, and infrastructure that enable the Foundation to sustainably launch, staff, and support high-quality autism service centers statewide — all while maintaining compliance, financial transparency, and service excellence.</p>
+                
+                <h5 style="margin-top: 2rem;">🧩 1. People & Leadership</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Area</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Strategy</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Timeline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Board Development</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Recruit 2 new board members annually with expertise in law, education, Medicaid billing, or philanthropy.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2025–2028</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Staffing Benchmarks</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Hire licensed clinical staff in each center (BCBAs, SLPs, OTs), and maintain a 1:10 supervisor:tech ratio.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Ongoing</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Internship Pipeline</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Partner with 3+ local universities for BCBA, SLP, OT, and education interns.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Start in 2026</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Leadership Succession Plan</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Create documentation and training for key roles (Executive Director, Clinical Director, Financial Admin).</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Draft by 2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">💰 2. Financial Capacity</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Area</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Strategy</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Timeline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Diversify Funding</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Combine government billing (Medicaid, IDEA), foundation grants, and individual donor campaigns.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Immediate & Ongoing</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Build Reserve Fund</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Allocate 10–20% of unrestricted revenue annually toward operating reserves.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Begin in 2026</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Audit Readiness</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Implement bookkeeping system with fund accounting and automated grant reporting.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2025</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Foundation Management Fee</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Maintain a 5% internal fee from center revenues for organizational support and reinvestment.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Ongoing</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">🧠 3. Knowledge & Systems</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Area</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Strategy</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Timeline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Centralized Data System</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Use a single EHR/EMR platform across all centers for scheduling, notes, billing, and reporting.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Launch with first center in 2025</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Grant Management System</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Track grant applications, reporting deadlines, and outcomes using a CRM or grant tracking tool.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2025</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Compliance Framework</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Develop training and auditing systems to ensure Medicaid, waiver, and education program compliance.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Ongoing, improve annually</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Impact Reporting Toolkit</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Build templates for annual outcomes dashboards (clients served, hours delivered, satisfaction, etc.).</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">🏗️ 4. Facilities & Infrastructure</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Area</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Strategy</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Timeline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Standard Site Model</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Develop a repeatable floorplan and equipment package for future sites.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Complete in 2025</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Ownership Model</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Purchase land/buildings where possible to reduce long-term costs and protect nonprofit mission.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Begin with first site</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Accessibility Standards</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Ensure ADA-compliant spaces, sensory-friendly design, and quiet rooms in every center.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Apply to all facilities</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">🤝 5. Community & Partnership</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Area</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Strategy</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Timeline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">School District Partnerships</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Formalize MOU agreements with local ISDs for IEP service delivery.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Start in Kingsbury in 2025</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Provider Network</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Collaborate with nearby pediatricians, mental health providers, and waiver case managers for referrals.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Ongoing</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Family Council</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Create a parent advisory board for each center to provide feedback and ensure family-centered care.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Begin in 2026</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Legislative Engagement</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Join coalitions advocating for increased Medicaid autism funding and school special education reform.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2026–2028</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">📊 Success Measures</h5>
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li>Capacity to support 5+ centers by 2028</li>
+                        <li>Annual operating reserves exceed 6 months of expenses</li>
+                        <li>90%+ staff and intern retention</li>
+                        <li>Clean audits and compliance checks</li>
+                        <li>Consistent grant funding renewals and donor growth</li>
+                        <li>Family satisfaction ≥ 90%</li>
+                    </ul>
+                </div>
+                
+                <h4 style="margin-top: 2rem;">🤝 Partnership Development Strategy</h4>
+                
+                <p style="margin-top: 1rem;"><strong>🏁 Purpose:</strong><br>
+                To cultivate and sustain mutually beneficial partnerships that help expand access to autism services, unlock new funding sources, enhance community trust, and improve outcomes across all centers.</p>
+                
+                <h5 style="margin-top: 2rem;">🧠 1. Clinical & Academic Partners</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Partner Type</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Examples</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Strategic Purpose</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Timeline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Universities</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">UT Austin, Texas State, UT Health San Antonio</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Recruit interns in ABA, SLP, OT, education. Offer field placement sites and research collaboration.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Begin in 2025 with 1 school; expand to 3+ by 2027</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Medical Providers</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Pediatricians, developmental clinics</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Build referral pipelines for evaluations and services. Explore co-location or referral MOU.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Outreach begins in 2025</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Therapist Networks</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Licensed clinicians, teletherapy platforms</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Subcontract speech, OT, or counseling until internal hires are placed.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Use as bridge in new sites</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">🏫 2. School & Education Partners</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Partner Type</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Examples</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Strategic Purpose</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Timeline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">ISDs (School Districts)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Seguin ISD, Austin ISD, charter schools</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Contract to serve IEP students unable to be served on campus. Nonpublic school partnerships.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Begin with Kingsbury region in 2025</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Special Education Co-ops</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Regional ESCs (Education Service Centers)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Gain access to multiple rural districts through shared service contracts.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Explore in 2026–2028</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Parent Support Groups</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Local PTA special ed groups, Facebook groups</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Share information, recruit families, and build a trust-based brand.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Ongoing</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">💰 3. Funding & Institutional Partners</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Partner Type</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Examples</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Strategic Purpose</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Timeline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Foundations</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">St. David's Foundation, Hogg Foundation, United Way</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Apply for startup, capital, or program grants to expand centers.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Apply to 3+ by end of 2025</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Community Development Orgs</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Local chambers, CDCs, business incubators</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Tap into real estate and startup support for nonprofit development.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Identify in new expansion regions</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Faith-Based Groups</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Church-based outreach ministries</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Possible volunteer base, family referrals, or facility sharing.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Initiate where relevant</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">🧱 4. Government & Policy Partners</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Partner Type</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Examples</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Strategic Purpose</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Timeline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Texas HHS / Medicaid</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">TMHP, STAR MCOs (Superior, Blue Cross, etc.)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Credentialing, contracts, and technical assistance for billing.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Begin enrollment in 2025</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Legislative Advocates</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Local reps, autism caucuses</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Support Medicaid expansion, waivers, and special ed policy.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Begin relationship building in 2026</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Local Mental Health Authorities (LMHAs)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Bluebonnet Trails, Integral Care</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Collaborate on wraparound services and YES/CLASS waivers.</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Begin in each regional hub</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">📊 Tracking & Relationship Management</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Tool</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Strategy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">CRM System</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Use a contact management system to log partner meetings, grant cycles, and referral data</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Quarterly Partner Roundtables</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Host regional partner briefings to update on center progress and gather needs</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">MOU Templates</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Use ready-to-go Memoranda of Understanding for common collaborations (referrals, space-sharing, internships)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">🧭 Guiding Values for Partnerships</h5>
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li><strong>Mission Alignment:</strong> Partners must be child- and family-centered</li>
+                        <li><strong>Reciprocity:</strong> Each partnership should offer mutual value (referrals, training, funding, etc.)</li>
+                        <li><strong>Local Focus:</strong> Prioritize hyper-local credibility and presence</li>
+                        <li><strong>Data Sharing:</strong> Use collaborative data to drive improvements in access, quality, and equity</li>
+                    </ul>
+                </div>
+                
+                <h4 style="margin-top: 2rem;">💻 Technology Integration Strategy</h4>
+                
+                <p style="margin-top: 1rem;"><strong>🏁 Purpose:</strong><br>
+                To implement secure, scalable, and user-friendly technology systems that support care delivery, improve outcomes, ensure compliance, streamline billing, and enable rapid expansion.</p>
+                
+                <h5 style="margin-top: 2rem;">🔧 1. Core Systems to Implement</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">System</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Purpose</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Examples / Notes</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Timeline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Electronic Health Record (EHR/EMR)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Clinical documentation, scheduling, Medicaid billing, progress notes</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Systems like TheraNest, CentralReach, AccuPoint, or RethinkBH</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Launch with 1st center in 2025</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">CRM & Donor Management</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Track grants, donations, funder relationships, and contacts</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Bloomerang, Kindful, or Salesforce Nonprofit Cloud</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Build in parallel with 501(c)(3) fundraising in 2025</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Grant & Project Management</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Track grant cycles, program metrics, and deadlines</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Use built-in tools from CRM or Airtable, ClickUp</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2025–2026</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Parent & Caregiver Portal</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Appointment updates, billing info, progress summaries, surveys</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Use EHR system features or develop custom portal</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2026</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Staff Scheduling & HR Software</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Manage therapist schedules, PTO, time tracking</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">When I Work, Gusto, or built-in EMR tools</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2025</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Secure File Sharing & Storage</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">HIPAA-compliant file storage, policies, templates</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Google Workspace (HIPAA enabled), Dropbox Business, or SharePoint</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2025</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">E-Learning & Training Platform</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Staff onboarding, clinical training, compliance courses</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Trainual, Relias, or TalentLMS</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2026–2027</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">📊 2. Data & Reporting Framework</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Focus Area</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Strategy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Client Outcomes</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Use EMR to generate automated reports on therapy hours, skill acquisition, IEP progress, and waitlist reduction</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Compliance</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Track Medicaid service logs, billing audits, and credential expirations digitally</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Fundraising Metrics</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Sync grant deliverables and donor impact reports with real-time program data</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Board Dashboards</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Quarterly internal dashboards on client count, revenue, and center performance</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">🔒 3. Security & Privacy Compliance</h5>
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li>All systems must be HIPAA-compliant (covered entities due to handling PHI)</li>
+                        <li>Use multi-factor authentication (MFA) for staff access to sensitive platforms</li>
+                        <li>Establish a Data Retention Policy (e.g. 7 years for clinical records)</li>
+                        <li>Train staff annually on HIPAA, FERPA, and cybersecurity best practices</li>
+                        <li>Ensure role-based permissions and audit logs in each system</li>
+                    </ul>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">🚀 4. Technology for Scalability</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Expansion Goal</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Tech Support</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Launching new centers</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Replicate EMR and scheduling system templates with location tagging</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Hiring staff</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Use cloud-based HR and onboarding tools with role-based training tracks</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Serving rural areas</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Introduce telehealth/teleconsultation features starting in 2028</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Multi-site management</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Use a central admin dashboard to oversee all center activity and financials</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">📅 5. Implementation Roadmap</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Phase</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Focus</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Year</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Phase 1</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Select EMR + CRM + file system; implement with Kingsbury center</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2025</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Phase 2</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Add HR/scheduling and e-learning systems; parent portal pilot</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2026</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Phase 3</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Enable advanced data dashboards + integrate telehealth</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">2027–2028</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">📌 Key Success Metrics</h5>
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li>EMR adoption rate (staff login + usage within 90 days of hire)</li>
+                        <li>Medicaid billing accuracy > 98%</li>
+                        <li>Client documentation up to date within 24 hours > 95%</li>
+                        <li>Time to onboard new staff reduced by 50%</li>
+                        <li>Funder reports generated automatically with minimal staff hours</li>
+                    </ul>
+                </div>
+                
+                <h4 style="margin-top: 2rem;">📊 Impact Measurement Framework</h4>
+                
+                <p style="margin-top: 1rem;"><strong>🏁 Purpose:</strong><br>
+                To measure the social, developmental, and operational outcomes of our programs — ensuring accountability to funders, families, and communities while continuously improving quality of care.</p>
+                
+                <h5 style="margin-top: 2rem;">🧩 Framework Structure</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Tier</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">What We Measure</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Why It Matters</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Outputs</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Services delivered (hours, sessions, clients)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Show our reach and scale</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Outcomes</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Short- and medium-term improvements for clients and families</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Show our effectiveness</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Impact</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Long-term changes in community access, independence, and equity</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Show our systemic value</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">📈 1. Key Output Metrics</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Metric</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Definition</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Source</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Frequency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Clients Served</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Unique individuals enrolled in center-based services</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">EMR system</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Monthly & annually</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Therapy Hours Delivered</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Total ABA, speech, OT, and education hours</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">EMR system</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Monthly</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Medicaid-Funded Sessions</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Number of sessions billed through Medicaid</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Billing system</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Monthly</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">New Center Openings</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Number of new sites launched</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Internal ops</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annually</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Waitlist Reduction</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Change in time-to-service for enrolled regions</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Intake logs</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Quarterly</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">🧠 2. Key Outcome Metrics</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Area</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Metric</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Source</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Frequency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Child Development</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">% of therapy goals met (ABA, IEP, OT, etc.)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Clinical data system</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Quarterly</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Family Experience</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Family satisfaction rating (out of 5)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annual surveys</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annually</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">School Readiness</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">% of school-age clients with increased adaptive/academic scores</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Teacher + therapist reports</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">6-month reviews</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Staff Effectiveness</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Staff retention + performance scores</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">HR system + internal reviews</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Biannually</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Referral Pipeline</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Increase in partner referrals (schools, physicians)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Referral log</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Quarterly</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">🌎 3. Long-Term Impact Metrics</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Area</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Metric</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Source</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Timeline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Access to Care</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;"># of underserved counties reached by a center</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">GIS + program data</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annually</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Economic Impact</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Local jobs created + Medicaid dollars captured</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Financial system</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annually</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Systemic Equity</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">% of low-income families served</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Intake forms + payer data</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annually</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Professional Training</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Interns trained & credentialed through our centers</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Internship records</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annually</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">🧭 4. Data Collection Methods</h5>
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li><strong>📱 Electronic Health Records (EHR):</strong> Session notes, goal tracking, attendance</li>
+                        <li><strong>📋 Surveys:</strong> Family satisfaction, staff engagement, referral partner feedback</li>
+                        <li><strong>🗂️ Intake & Outcome Forms:</strong> Baseline and post-program assessments</li>
+                        <li><strong>📊 Dashboards:</strong> Automated board and funder dashboards every quarter</li>
+                        <li><strong>🔍 Audits:</strong> Random internal file reviews for quality and completeness</li>
+                    </ul>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">📣 5. Reporting & Sharing Results</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Audience</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Format</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Frequency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Board of Directors</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Impact dashboard + narrative</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Quarterly</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Funders/Grants</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Custom reports with relevant metrics</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Per grant cycle</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Families</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annual impact summary + testimonials</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Yearly</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Public</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Website + annual report highlights</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annually</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">✅ Success Targets (by 2026)</h5>
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li>90%+ of families report satisfaction</li>
+                        <li>85%+ of therapy goals met across disciplines</li>
+                        <li>Waitlists reduced by 50% in launch counties</li>
+                        <li>10+ interns trained with ongoing clinical supervision</li>
+                        <li>98%+ billing accuracy and compliance rate</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="information" class="tab-content">
+                <h3>Additional Information</h3>
+                
+                <h4 style="margin-top: 2rem;">💸 Investment Tiers & Opportunities</h4>
+                
+                <p style="margin-top: 1rem;"><strong>🏁 Purpose</strong><br>
+                To offer mission-aligned funders clear pathways to invest in our work at meaningful levels — whether they are supporting a new autism center, sponsoring a student's therapy, or underwriting technology and training that fuels our long-term growth.</p>
+                
+                <h5 style="margin-top: 2rem;">🧱 Tiered Giving Levels</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Tier Name</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Amount</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">What It Supports</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Recognition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Founder's Circle</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">$1,000,000+</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Entire build-out of a new autism center (land, construction, staffing ramp-up)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Center naming opportunity, permanent plaque, annual gala feature</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Pillar Investor</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">$500,000+</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Funds multiple years of services for 150+ children (staff salaries, therapy hours)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Dedicated therapy room naming, custom impact reports</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Community Builder</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">$250,000+</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Covers full-year cost of all speech and occupational therapy services at a center</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Recognition on donor wall, named internship program</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Access Champion</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">$100,000+</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Funds full scholarships for 7–10 children receiving ABA, OT, and speech therapy</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Quarterly updates on sponsored families, inclusion in annual report</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Innovation Partner</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">$50,000+</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Launches tech upgrades or pilot programs like telehealth or bilingual expansion</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Featured in pilot summary, special briefing with leadership</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Family Advocate</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">$25,000+</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Funds parent training, staff development, and social skills groups for 1 year</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Program-specific updates, name on website honor roll</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Hope Giver</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">$10,000+</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Covers 1 full year of services for a child in need</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Personalized thank-you note from family (opt-in)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Everyday Ally</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">$1,000+</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Provides therapy supplies, toys, and learning tools across centers</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Mention in digital newsletter + impact card</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Monthly Supporter</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">$25–$500/mo</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Ongoing support for general operations, scholarships, or area of choice</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Monthly story email + donor dashboard access</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">🧭 Other Investment Opportunities</h5>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 1rem 0;">
+                    <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px;">
+                        <h6 style="margin-top: 0;">💼 Programmatic Sponsorships</h6>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li>Fund ABA certification training for interns ($2,000 per trainee)</li>
+                            <li>Sponsor a Summer Camp or Extended School Year program</li>
+                            <li>Underwrite staff training in trauma-informed care or bilingual therapy</li>
+                            <li>Help launch rural outreach or home-based ABA delivery teams</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px;">
+                        <h6 style="margin-top: 0;">🧓‍🏫 Naming Opportunities</h6>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li>Individual therapy rooms</li>
+                            <li>Outdoor sensory play spaces</li>
+                            <li>Parent lounge / training room</li>
+                            <li>Future centers (by region or city)</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px;">
+                        <h6 style="margin-top: 0;">🧪 Innovation & Research</h6>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li>Pilot new therapy models (e.g., hybrid ABA + education day models)</li>
+                            <li>Collaborate on outcomes research with university partners</li>
+                            <li>Fund data systems and compliance tools</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px;">
+                        <h6 style="margin-top: 0;">💖 Legacy & Endowment Gifts</h6>
+                        <ul style="margin: 0; padding-left: 20px;">
+                            <li>Leave a lasting impact by contributing to our endowment</li>
+                            <li>Create a named fund to support children with complex needs</li>
+                            <li>Set up a planned gift or charitable trust in honor of a loved one</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">📣 How We Recognize Donors</h5>
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li>Dedicated webpage for major donors</li>
+                        <li>Physical donor recognition walls in centers</li>
+                        <li>Custom reports showing how funds were used and what was achieved</li>
+                        <li>Invitations to open houses, ribbon cuttings, and annual donor summits</li>
+                        <li>Optional anonymous giving available at all levels</li>
+                    </ul>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">✅ How to Give</h5>
+                <p>We accept:</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 1rem 0;">
+                    <div style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center;">
+                        One-time donations
+                    </div>
+                    <div style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center;">
+                        Recurring gifts
+                    </div>
+                    <div style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center;">
+                        Donor-advised fund (DAF) contributions
+                    </div>
+                    <div style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center;">
+                        IRA qualified charitable distributions
+                    </div>
+                    <div style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center;">
+                        Stock transfers
+                    </div>
+                    <div style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center;">
+                        Corporate matching gifts
+                    </div>
+                    <div style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center;">
+                        Grants and foundation funds
+                    </div>
+                </div>
+                
+                <p>Donors can designate gifts to a specific program, region, or campaign. Contact:</p>
+                <p>📧 <a href="mailto:info@specialhelpers.com">info@specialhelpers.com</a></p>
+                
+                <h4 style="margin-top: 2rem;">📊 Impact Metrics & Reporting Plan</h4>
+                
+                <p style="margin-top: 1rem;"><strong>🏁 Purpose</strong><br>
+                To measure, analyze, and report on the impact of our services — helping funders, families, and stakeholders understand the outcomes we achieve and the communities we serve.</p>
+                
+                <h5 style="margin-top: 2rem;">✅ Core Impact Categories & Metrics</h5>
+                <h6 style="margin-top: 1rem;">👼 Client Outcomes</h6>
+                
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Metric</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Description</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Target</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Frequency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Clients Served</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Total number of children and youth enrolled in services</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">150 per center/year</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Monthly</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Therapy Hours Delivered</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Total hours of ABA, SLP, OT, and special ed instruction provided</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">20,000+/center/year</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Monthly</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Goal Attainment</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">% of clinical or educational goals achieved per treatment plan</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">≥ 85%</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Quarterly</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Waitlist Reduction</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Average number of days from referral to service start</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">-50% within 12 months</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Biannually</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Family Satisfaction</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Parent/caregiver rating out of 5</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">≥ 4.5</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annually</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h6 style="margin-top: 1.5rem;">👩‍🏫 Workforce & Training</h6>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Metric</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Description</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Target</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Frequency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Staff Retention Rate</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">% of full-time clinical staff retained annually</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">≥ 90%</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annually</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Interns Trained</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Number of students completing internship or practicum at a center</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">5+ per year</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annually</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Staff Credentialing</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">% of behavior techs credentialed as RBTs</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">≥ 95%</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Quarterly</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Training Hours</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Hours of staff professional development (ethics, autism, trauma-informed care, etc.)</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">≥ 20 hrs/year</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annually</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h6 style="margin-top: 1.5rem;">🌍 Community Impact</h6>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Metric</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Description</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Target</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Frequency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Centers Launched</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Total number of centers opened</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">1 new per year</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annually</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Counties Served</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Number of Texas counties with service access</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">15 by 2030</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annually</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Medicaid Billing Volume</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Total reimbursements through government funding streams</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Track growth</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Monthly</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Scholarship Clients</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Clients served at no cost through foundation funding</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Increase annually</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Quarterly</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Partnerships Formed</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">New MOU agreements with schools, hospitals, or universities</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">3+ per year</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annually</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">🧰 Reporting Deliverables</h5>
+                <div style="overflow-x: auto; margin: 1rem 0;">
+                    <table style="width: 100%; border-collapse: collapse; border: 1px solid #e2e8f0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Report</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Audience</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Frequency</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #e2e8f0;">Format</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Board Dashboard</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Board of Directors</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Quarterly</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Digital dashboard + PDF summary</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annual Impact Report</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Public, donors, partners</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Annually</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Designed PDF + website</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Grant Reports</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Foundation + government funders</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Per grant terms</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Custom narrative + metric tables</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Family Snapshot Reports</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Client families</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Biannually</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Progress summary with visual milestones</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Compliance Reports</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">Medicaid, TEA, LMHAs</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">As required</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">EMR-generated logs + audit-ready forms</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">🔧 How We Collect & Track Metrics</h5>
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li><strong>✅ EMR Platform</strong> – for therapy sessions, goals, progress</li>
+                        <li><strong>✅ Intake & Discharge Forms</strong> – for demographic, payer, and diagnostic data</li>
+                        <li><strong>✅ Surveys</strong> – for family feedback, intern evaluations, referral partner insights</li>
+                        <li><strong>✅ Financial Software</strong> – for billing, scholarship tracking, and ROI calculations</li>
+                        <li><strong>✅ Grant Management CRM</strong> – for reporting timelines and documentation</li>
+                    </ul>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">📣 Funder Alignment</h5>
+                <p>Open Horizons Foundation aligns its impact tracking with common funder priorities such as:</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 1rem 0;">
+                    <div style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center;">
+                        Access to care
+                    </div>
+                    <div style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center;">
+                        Equity in service delivery
+                    </div>
+                    <div style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center;">
+                        Outcomes for neurodiverse children
+                    </div>
+                    <div style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center;">
+                        Rural and Medicaid population reach
+                    </div>
+                    <div style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center;">
+                        Workforce development
+                    </div>
+                    <div style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center;">
+                        Data-driven program management
+                    </div>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">🧭 Looking Ahead</h5>
+                <p>As we scale, we will:</p>
+                
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li>Publish a live impact dashboard on our website</li>
+                        <li>Develop automated grant report templates</li>
+                        <li>Engage in independent evaluation partnerships with universities</li>
+                        <li>Launch interactive family feedback tools to co-design future services</li>
+                    </ul>
+                </div>
+                
+                <h4 style="margin-top: 2rem;">💵 Tax Benefits for Investors & Donors</h4>
+                <p style="margin-top: 0.5rem;">Open Horizons Foundation | 501(c)(3) Public Charity</p>
+                
+                <p style="margin-top: 1rem;"><strong>🏁 Why It Matters</strong><br>
+                As a 501(c)(3) nonprofit organization, donations to Open Horizons Foundation may be eligible for significant federal and state tax benefits — allowing donors to support life-changing autism services while reducing their tax burden.</p>
+                
+                <h5 style="margin-top: 2rem;">🧾 Key Tax Advantages</h5>
+                
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                    <h6 style="margin-top: 0;">✅ Federal Income Tax Deduction</h6>
+                    <p>Donors can deduct contributions to Open Horizons Foundation from their federal income taxes if they itemize deductions.</p>
+                    
+                    <p><strong>Limits:</strong></p>
+                    <ul style="margin: 0.5rem 0; padding-left: 20px;">
+                        <li>Cash donations: Deduct up to 60% of adjusted gross income (AGI)</li>
+                        <li>Non-cash assets: Deduct up to 30% of AGI (for things like stock, real estate, or vehicles)</li>
+                    </ul>
+                    
+                    <p>Excess contributions can typically be carried forward for 5 years.</p>
+                </div>
+                
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                    <h6 style="margin-top: 0;">📈 Appreciated Securities (Stock Gifts)</h6>
+                    <p>Donate publicly traded stock or mutual funds instead of cash.</p>
+                    
+                    <p>You avoid capital gains tax and receive a deduction for the full fair market value (if held >1 year).</p>
+                    
+                    <p><strong>Example:</strong> Donating $10,000 of appreciated stock bought for $2,000 avoids ~$1,900 in capital gains tax and gives a $10,000 deduction.</p>
+                </div>
+                
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                    <h6 style="margin-top: 0;">🏡 Real Estate or Property</h6>
+                    <p>Gifts of appreciated property may yield major deductions.</p>
+                    
+                    <p>Can be donated outright or through charitable remainder trusts or bargain sales.</p>
+                    
+                    <p>Requires a qualified appraisal and IRS Form 8283.</p>
+                </div>
+                
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                    <h6 style="margin-top: 0;">🧓 IRA Qualified Charitable Distributions (QCDs)</h6>
+                    <p>If you're 70½ or older, you can give up to $100,000/year directly from your IRA to Open Horizons Foundation.</p>
+                    
+                    <p>QCDs count toward your Required Minimum Distribution (RMD) but are not included in your taxable income.</p>
+                    
+                    <p>A powerful way to reduce taxable income and support a mission you believe in.</p>
+                </div>
+                
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                    <h6 style="margin-top: 0;">🏦 Donor-Advised Funds (DAFs)</h6>
+                    <p>Recommend a grant to Open Horizons Foundation through your existing DAF at Fidelity, Schwab, Vanguard, or a community foundation.</p>
+                    
+                    <p>The donation is already tax-deductible when made to the DAF.</p>
+                </div>
+                
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                    <h6 style="margin-top: 0;">⚖️ Estate & Planned Giving</h6>
+                    <p>Include Open Horizons Foundation in your will, trust, or beneficiary designations.</p>
+                    
+                    <p>Potential to reduce or eliminate estate and inheritance taxes.</p>
+                    
+                    <p><strong>Options include:</strong></p>
+                    <ul style="margin: 0.5rem 0; padding-left: 20px;">
+                        <li>Bequests</li>
+                        <li>Charitable Remainder Trusts (CRT)</li>
+                        <li>Charitable Lead Trusts (CLT)</li>
+                        <li>Retirement account beneficiary gifts</li>
+                    </ul>
+                </div>
+                
+                <h5 style="margin-top: 2rem;">📚 What We Provide</h5>
+                <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 1rem 0;">
+                    <ul style="margin: 0; padding-left: 20px;">
+                        <li>Official IRS Determination Letter (pending or received)</li>
+                        <li>Year-end giving statements</li>
+                        <li>Acknowledgment letters for all gifts > $250</li>
+                        <li>Coordination with your legal, tax, or wealth advisor if needed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div style="text-align: center; width: 100%;">
+                <p>&copy; 2025 The Open Horizons Foundation</p>
+                <p>A 501(c)(3) nonprofit organization</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Password protection
+        document.getElementById('login-button').addEventListener('click', function() {
+            const password = document.getElementById('password-input').value;
+            if (password === 'trace') {
+                document.getElementById('login-section').style.display = 'none';
+                document.getElementById('content-section').style.display = 'block';
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+            }
+        });
+
+        // Allow Enter key to submit password
+        document.getElementById('password-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('login-button').click();
+            }
+        });
+
+        // Tab functionality
+        function openTab(evt, tabName) {
+            // Hide all tab content
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+
+            // Remove active class from all tab buttons
+            const tabButtons = document.getElementsByClassName('tab-button');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+
+            // Show the selected tab content and mark button as active
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
