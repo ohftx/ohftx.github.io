@@ -4,84 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Open Horizons Foundation - Supporting Special Needs, Unlocking Special Abilities</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="The Open Horizons Foundation is a Texas 501(c)(3) nonprofit empowering families of children with disabilities through advocacy, resources, and inclusive community support.">
+    <meta name="keywords" content="Open Horizons Foundation, special needs, disability support, autism resources, PPECC, pediatric care, Texas nonprofit, 501(c)(3), inclusive daycare, special needs families, Austin TX, special abilities">
+    <meta name="author" content="The Open Horizons Foundation">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2C5282">
+    <link rel="canonical" href="https://specialhelpers.org/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="The Open Horizons Foundation">
+    <meta property="og:url" content="https://specialhelpers.org/">
+    <meta property="og:title" content="The Open Horizons Foundation - Supporting Special Needs, Unlocking Special Abilities">
+    <meta property="og:description" content="A Texas 501(c)(3) nonprofit empowering families of children with disabilities through advocacy, resources, and inclusive community support.">
+    <meta property="og:image" content="https://specialhelpers.org/media/pic1.jpg">
+    <meta property="og:image:alt" content="Children supported by The Open Horizons Foundation">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://specialhelpers.org/">
+    <meta name="twitter:title" content="The Open Horizons Foundation">
+    <meta name="twitter:description" content="A Texas 501(c)(3) nonprofit empowering families of children with disabilities through advocacy, resources, and inclusive community support.">
+    <meta name="twitter:image" content="https://specialhelpers.org/media/pic1.jpg">
+    <meta name="twitter:image:alt" content="Children supported by The Open Horizons Foundation">
+
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Structured Data: NGO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NGO",
+      "name": "The Open Horizons Foundation",
+      "alternateName": "Special Helpers",
+      "url": "https://specialhelpers.org/",
+      "logo": "https://specialhelpers.org/media/logo.jpg",
+      "image": "https://specialhelpers.org/media/pic1.jpg",
+      "description": "A Texas 501(c)(3) nonprofit empowering families of children with disabilities through advocacy, resources, and inclusive community support.",
+      "email": "info@specialhelpers.org",
+      "telephone": "+1-512-360-0599",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "5501 Balcones Dr A141",
+        "addressLocality": "Austin",
+        "addressRegion": "TX",
+        "postalCode": "78731",
+        "addressCountry": "US"
+      },
+      "nonprofitStatus": "Nonprofit501c3",
+      "areaServed": {
+        "@type": "State",
+        "name": "Texas"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #2C5282;    /* Deep blue */
-            --secondary-color: #48BB78;  /* Green */
-            --accent-color: #ED8936;     /* Orange */
-            --text-color: #2D3748;
-            --light-bg: #F7FAFC;
-            --white: #FFFFFF;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-        }
-
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        /* Layout Components */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        section {
-            padding: 4rem 0;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            width: 100%;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary-color);
-        }
+        /* Page-specific styles for the homepage */
 
         /* Hero Section */
         .hero {
@@ -90,7 +74,7 @@
             padding: 4rem 0;
             text-align: center;
             overflow: hidden;
-            min-height: 90vh;
+            min-height: calc(90vh - 65px);
         }
 
         .hero-video {
@@ -123,28 +107,20 @@
             margin-bottom: 2rem;
         }
 
-        /* Button Styles */
-        .button {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.3s, background-color 0.3s;
+        /* Break the Mandela attribution to its own line on wider screens;
+           on narrow screens the quote and attribution flow together. */
+        .hero-quote-break {
+            display: none;
         }
 
-        .button:hover {
-            transform: translateY(-2px);
+        @media (min-width: 883px) {
+            .hero-quote-break {
+                display: inline;
+            }
         }
 
-        .button-primary {
-            background-color: var(--accent-color);
-            color: var(--white);
-        }
-
-        .button-secondary {
-            background-color: var(--secondary-color);
-            color: var(--white);
+        .hero-content .button {
+            margin-top: 0;
         }
 
         /* About Section */
@@ -164,7 +140,7 @@
             background: var(--white);
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
 
@@ -180,7 +156,7 @@
             background: var(--white);
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         /* Call to Action Section */
@@ -203,7 +179,7 @@
             width: 100%;
             height: auto;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
         }
 
@@ -211,34 +187,20 @@
             transform: scale(1.05);
         }
 
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                padding: 1rem 0;
+            .hero {
+                padding: 6rem 0 3rem;
             }
 
-            .logo {
-                margin-bottom: 0.5rem;
-            }
-            
-            .logo img {
-                max-height: 40px;
-            }
-            
-            .logo span {
-                font-size: 1rem;
-            }
-
-            nav ul {
-                margin-top: 0.5rem;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.5rem;
-            }
-            
-            nav a {
-                font-size: 0.9rem;
-                padding: 0.3rem 0.5rem;
+            .hero h1 {
+                font-size: 2rem;
             }
 
             .cta-images {
@@ -250,46 +212,17 @@
                 max-width: 100%;
             }
         }
-        
-        /* Contact Section */
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--text-color);
-            color: var(--white);
-            padding: 2rem 0;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 1rem 0;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav ul {
-                gap: 1rem;
-            }
-
-            .hero {
-                padding: 6rem 0 3rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-        }
     </style>
 </head>
 <body>
+    <!-- Annual update: edit the % and year below -->
+    <div class="impact-banner" role="region" aria-label="2025 impact statement">
+        <div class="container impact-banner-inner">
+            <span class="impact-stat">99.92%</span>
+            <span class="impact-copy">of 2025 donations were deployed in the same year directly into the hands of families in need &mdash; thank you to our generous volunteers.</span>
+            <a class="impact-cta" href="donate.html">Donate &rarr;</a>
+        </div>
+    </div>
     <header>
         <div class="container header-content">
             <a href="#" class="logo" style="display: flex; align-items: center;"><img src="media/logo.jpg" alt="The Open Horizons Foundation Logo" style="max-height: 60px; margin-right: 15px;"><span>The Open Horizons Foundation</span></a>
@@ -307,14 +240,14 @@
     </header>
 
     <section class="hero">
-        <video class="hero-video" autoplay muted loop playsinline>
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="media/video-poster.jpg">
             <source src="media/video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="container">
             <div class="hero-content">
                 <h1>With the right support, families of children with disabilities can do more than survive – they can thrive.</h1>
-                <p style="font-style: italic; margin: 1rem 0;">"Disabled children are equally entitled to an exciting and brilliant future." — Nelson Mandela</p>
+                <p style="font-style: italic; margin: 1rem 0;">"Disabled children are equally entitled to an exciting and brilliant future."<br class="hero-quote-break"> — Nelson Mandela</p>
                 <a href="donate.html" class="button button-primary">Donate</a>
                 <a href="connect.html" class="button button-secondary">Connect</a>
             </div>
@@ -388,9 +321,12 @@
             <div class="contact-info">
                 <div>
                     <h3>Get in Touch</h3>
+                    <p>For donation related questions ask for Tommy</p>
                     <p>Email: info@specialhelpers.org</p>
-                    <p>Phone: (830) 359-1082</p>
+                    <p>Phone: 1 512-360-0599</p>
                     <p>Address: 5501 Balcones Dr A141 Austin, TX 78731</p>
+                    <p>EIN: <a href="Open%20Horizons%20EIN.pdf" target="_blank" rel="noopener noreferrer">33-4706242</a> &mdash; <a href="2025%20990PF.pdf" target="_blank" rel="noopener noreferrer">IRS 2025 990 Filing</a></p>
+                    <p>Legal Name: OPEN HORIZONS FOUNDATION</p>
                 </div>
                 <div>
                     <h3>Connect With Us</h3>

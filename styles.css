@@ -1,0 +1,261 @@
+/* =========================================================
+   The Open Horizons Foundation — shared site styles
+   Edit brand colors, typography, header, nav, buttons, and
+   footer here. Page-specific sections (hero, donate form,
+   resource cards, tabs, etc.) live inline in each page.
+   ========================================================= */
+
+/* ---------- Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- Theme tokens ---------- */
+:root {
+    --primary-color: #2C5282;   /* Deep blue   */
+    --secondary-color: #48BB78; /* Green       */
+    --accent-color: #ED8936;    /* Orange      */
+    --text-color: #2D3748;
+    --light-bg: #F7FAFC;
+    --white: #FFFFFF;
+}
+
+/* ---------- Base typography ---------- */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+/* ---------- Layout primitives ---------- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 4rem 0;
+}
+
+/* ---------- Header ---------- */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* ---------- Navigation ---------- */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* ---------- Page header (used on inner pages) ---------- */
+.page-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+/* ---------- Buttons ----------
+   Works for both <a> and <button> elements.
+   `margin-top` gives breathing room when a button follows body
+   text; override with `.button { margin-top: 0; }` in tighter
+   layouts (e.g. the homepage hero). */
+.button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.button-secondary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.button-large {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background-color: var(--text-color);
+    color: var(--white);
+    padding: 2rem 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.footer-text {
+    width: 100%;
+    text-align: center;
+}
+
+/* ---------- Skip link (accessibility) ----------
+   Visually hidden until focused via Tab key, then appears
+   at the top-left so keyboard users can jump past the nav. */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 0 0 5px 0;
+    z-index: 100;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ---------- Impact banner (top of every page) ----------
+   Annual update: to refresh for next year, search the repo for
+   "99.92%" and "2025 donations" and update both in each HTML file. */
+.impact-banner {
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 0.85rem 0;
+}
+
+.impact-banner-inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.impact-stat {
+    font-size: 1.85rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.impact-copy {
+    flex: 1;
+    font-size: 0.95rem;
+    min-width: 0;
+}
+
+.impact-cta {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background-color: rgba(255, 255, 255, 0.18);
+    color: var(--white);
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.impact-cta:hover,
+.impact-cta:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+    outline: none;
+}
+
+/* ---------- Responsive: shared mobile rules ---------- */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+
+    .logo {
+        margin-bottom: 0.5rem;
+    }
+
+    .logo img {
+        max-height: 40px;
+    }
+
+    .logo span {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .impact-stat {
+        font-size: 1.45rem;
+    }
+
+    .impact-copy {
+        font-size: 0.85rem;
+    }
+
+    .impact-cta {
+        display: none;
+    }
+}

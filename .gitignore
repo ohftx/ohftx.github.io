@@ -1,1 +1,5 @@
 .DS_Store
+
+# Local backups (do not commit)
+*.original.*
+*.bak
