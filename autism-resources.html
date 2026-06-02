@@ -102,11 +102,10 @@
             margin: 2rem 0;
         }
 
-        .steps-list li {
+        .steps-list .step-item {
             margin-bottom: 1.5rem;
             padding-left: 1rem;
             border-left: 3px solid var(--secondary-color);
-            list-style-position: inside;
         }
 
         .faq-section {
@@ -276,20 +275,12 @@
                 grid-template-columns: 1fr;
             }
 
-            .steps-list ol, .steps-list ul {
-                padding-left: 1rem;
-            }
-
-            .steps-list li {
+            .steps-list .step-item {
                 margin-left: 0;
                 padding-left: 0.5rem;
             }
 
-            .steps-list li h4 {
-                margin-top: 0.5rem;
-            }
-
-            .steps-list li p {
+            .steps-list .step-item p {
                 margin-left: 0;
                 padding-right: 0.5rem;
             }
@@ -361,6 +352,16 @@
             display: flex;
             align-items: center;
             gap: 0.25rem;
+        }
+
+        .region-collapsible-body .steps-list ul {
+            padding-left: 2.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .region-collapsible-body .steps-list ul li {
+            margin-bottom: 0.35rem;
         }
 
         /* Center the closing Connect section */
@@ -561,24 +562,22 @@
             <p>Learning that your child has Autism Spectrum Disorder (ASD) can be overwhelming. Remember that an autism diagnosis doesn’t change who your child is—it helps you understand how they experience the world and provides a pathway to support their unique needs.</p>
             
             <div class="steps-list">
-                <ol>
-                    <li>
-                        <h4>Take time to process</h4>
-                        <p>Any diagnosis can be life-changing for families, and allowing yourself to absorb and understand your child’s diagnosis and process emotions that come is vital to being able to support them.</p>
-                    </li>
-                    <li>
-                        <h4>Learn about your child’s specific diagnosis</h4>
-                        <p>Many providers will give you information about your child’s new diagnosis with handouts, websites, and verbal information. Dive into the information you’re given, and never hesitate to ask for more. Consider searching for online support groups and in person support in your community.</p>
-                    </li>
-                    <li>
-                        <h4>Identify your village</h4>
-                        <p>It takes a village to raise any child, and that is no less true for a child with a disability. Whether it’s friends, family, educators, or a medical team, you have people that are on your side and ready to help you and your child however they best can.</p>
-                    </li>
-                    <li>
-                        <h4>Explore intervention options</h4>
-                        <p>As a family, it’s important to talk about the pro’s and con’s of the suggested interventions, and consider as applicable to your individual child. Never hesitate to question a suggestion, ask a question about a method, and do your own research about what you’re being instructed to do for your child.</p>
-                    </li>
-                </ol>
+                <div class="step-item">
+                    <h3><span class="step-num" aria-hidden="true">1</span> Take time to process</h3>
+                    <p>Any diagnosis can be life-changing for families, and allowing yourself to absorb and understand your child’s diagnosis and process emotions that come is vital to being able to support them.</p>
+                </div>
+                <div class="step-item">
+                    <h3><span class="step-num" aria-hidden="true">2</span> Learn about your child’s specific diagnosis</h3>
+                    <p>Many providers will give you information about your child’s new diagnosis with handouts, websites, and verbal information. Dive into the information you’re given, and never hesitate to ask for more. Consider searching for online support groups and in person support in your community.</p>
+                </div>
+                <div class="step-item">
+                    <h3><span class="step-num" aria-hidden="true">3</span> Identify your village</h3>
+                    <p>It takes a village to raise any child, and that is no less true for a child with a disability. Whether it’s friends, family, educators, or a medical team, you have people that are on your side and ready to help you and your child however they best can.</p>
+                </div>
+                <div class="step-item">
+                    <h3><span class="step-num" aria-hidden="true">4</span> Explore intervention options</h3>
+                    <p>As a family, it’s important to talk about the pro’s and con’s of the suggested interventions, and consider as applicable to your individual child. Never hesitate to question a suggestion, ask a question about a method, and do your own research about what you’re being instructed to do for your child.</p>
+                </div>
             </div>
         </div>
     </section>
